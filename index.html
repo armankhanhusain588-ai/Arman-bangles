@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arman Bangles - Handmade Lakh Bangles | UPI Payment Available</title>
-    <meta name="description" content="Arman Bangles - Premium handmade Lakh bangles with UPI payment. Contact: 87640 69398 | UPI: 8764069398@fam">
+    <meta name="description" content="Arman Bangles - Premium handmade Lakh bangles with UPI payment. Contact: 87640 69398 | UPI: 8764069398@fam | Email: armanbangles9@gmail.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -14,11 +14,9 @@
             background: var(--light); 
             color: var(--dark); 
             padding: 10px;
-            /* Arman Bangles Background Pattern */
             background-image: 
                 radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><pattern id="armanPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><text x="50" y="50" font-family="Arial" font-size="8" fill="%23d4af37" opacity="0.1" text-anchor="middle" dominant-baseline="middle">ARMAN BANGLES</text><circle cx="50" cy="50" r="40" fill="none" stroke="%238b4513" stroke-width="1" opacity="0.05"/></pattern></defs><rect width="200" height="200" fill="url(%23armanPattern)"/></svg>');
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
         }
         
         .mobile-container { max-width: 100%; margin: 0 auto; }
@@ -61,6 +59,7 @@
             color: var(--dark);
             font-size: 20px;
             text-decoration: none;
+            cursor: pointer;
         }
         .cart-count {
             position: absolute;
@@ -79,16 +78,13 @@
         
         /* Hero Section */
         .mobile-hero {
-            background: 
-                linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(212, 175, 55, 0.9)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><defs><pattern id="banglePattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="45" fill="none" stroke="%23ffffff" stroke-width="2" opacity="0.1"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="400" height="400" fill="url(%23banglePattern)"/></svg>');
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(212, 175, 55, 0.9));
             color: white; 
             padding: 40px 20px; 
             border-radius: 15px; 
             text-align: center; 
             margin-bottom: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         .mobile-hero h1 { font-size: 28px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         
@@ -138,7 +134,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s; 
             border: 2px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -155,9 +150,7 @@
         .lakh-bangle-img {
             width: 100%;
             height: 100%;
-            background: 
-                linear-gradient(135deg, #ff6b6b, #ff8e8e),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ffffff" stroke-width="3" opacity="0.3"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23ffffff" stroke-width="2" opacity="0.2"/></svg>');
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -175,7 +168,6 @@
             padding: 8px 20px;
             border-radius: 20px;
             display: inline-block;
-            border: 2px solid rgba(212, 175, 55, 0.3);
         }
         
         /* Add to Cart Button */
@@ -189,12 +181,10 @@
             font-weight: bold;
             margin: 10px 5px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
         .add-to-cart:hover {
             background: linear-gradient(135deg, #45a049, #4CAF50);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
         }
         
         /* Cart Modal */
@@ -234,6 +224,52 @@
             color: var(--primary);
         }
         
+        /* Checkout Modal */
+        .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+        .checkout-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
         /* UPI Payment Section */
         .upi-section {
             background: rgba(255, 255, 255, 0.95);
@@ -242,8 +278,6 @@
             margin: 20px 0;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
         }
         .upi-id {
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -254,21 +288,23 @@
             font-weight: bold;
             margin: 15px 0;
             word-break: break-all;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
         .qr-code {
             width: 200px;
             height: 200px;
-            background: 
-                linear-gradient(135deg, #f8f9fa, #e9ecef),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="none" stroke="%23667eea" stroke-width="2"/><rect x="20" y="20" width="60" height="60" fill="none" stroke="%23667eea" stroke-width="1"/><text x="50" y="85" font-family="Arial" font-size="8" fill="%23667eea" text-anchor="middle">UPI QR</text></svg>');
+            background: #f5f5f5;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 15px auto;
             border: 2px solid var(--primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         /* Contact */
@@ -278,8 +314,6 @@
             padding: 25px 20px; 
             margin-bottom: 20px; 
             text-align: center; 
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
         }
         .contact-item {
             display: flex; 
@@ -289,22 +323,20 @@
             background: rgba(212, 175, 55, 0.1); 
             border-radius: 10px; 
             margin: 10px 0;
+            cursor: pointer;
             transition: all 0.3s;
         }
         .contact-item:hover {
             background: rgba(212, 175, 55, 0.2);
-            transform: translateX(5px);
         }
         
         /* Footer */
         .mobile-footer { 
-            background: 
-                linear-gradient(135deg, var(--dark), var(--secondary));
+            background: linear-gradient(135deg, var(--dark), var(--secondary));
             color: white; 
             padding: 25px 20px; 
             border-radius: 15px; 
             text-align: center; 
-            border: 2px solid rgba(212, 175, 55, 0.3);
         }
         .social-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
         .social-links a { 
@@ -318,7 +350,6 @@
             justify-content: center;
             background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
-            border: 1px solid rgba(212, 175, 55, 0.3);
         }
         .social-links a:hover {
             background: var(--primary);
@@ -334,7 +365,6 @@
             font-size: 12px; 
             font-weight: bold; 
             margin: 10px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .offer-badge {
@@ -347,16 +377,32 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
         }
         
-        /* Bangle Design Elements */
-        .bangle-decoration {
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
-            margin: 10px 0;
-            border-radius: 2px;
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1002;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .payment-instructions {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
@@ -384,7 +430,6 @@
         <div class="mobile-hero">
             <h1>Arman Bangles 💫</h1>
             <p>Handmade Lakh Bangles with UPI Payment</p>
-            <div class="bangle-decoration"></div>
             <div class="india-badge">
                 <i class="fas fa-shipping-fast"></i> All India Delivery
             </div>
@@ -474,10 +519,23 @@
             </div>
             
             <div class="qr-code">
-                <div style="text-align: center; color: #666;">
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 10px;">Scan to Pay</div>
-                    <div style="font-size: 10px; color: #667eea;">8764069398@fam</div>
-                </div>
+                <!-- Replace with your actual QR code image -->
+                <img src="1000085397.jpg" alt="UPI QR Code - 8764069398@fam" title="Scan to Pay - 8764069398@fam">
+            </div>
+            
+            <div class="payment-instructions">
+                <h4 style="margin-bottom: 10px; color: var(--secondary);">📝 Payment Instructions:</h4>
+                <p style="margin: 5px 0;"><strong>Step 1:</strong> Scan QR code or use UPI ID: <strong>8764069398@fam</strong></p>
+                <p style="margin: 5px 0;"><strong>Step 2:</strong> After payment, email confirmation to:</p>
+                <p style="margin: 5px 0; background: rgba(212, 175, 55, 0.2); padding: 8px; border-radius: 5px; font-weight: bold;">
+                    📧 armanbangles9@gmail.com
+                </p>
+                <p style="margin: 5px 0;"><strong>Step 3:</strong> Include in your email:</p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Your Name & Order Details</li>
+                    <li>Payment Screenshot/Transaction ID</li>
+                    <li>Product Price Paid Confirmation</li>
+                </ul>
             </div>
             
             <p style="color: #666; font-size: 14px; margin: 10px 0;">
@@ -486,6 +544,10 @@
             
             <button class="btn" onclick="copyUPI()">
                 <i class="fas fa-copy"></i> Copy UPI ID
+            </button>
+            
+            <button class="btn" onclick="sendEmail()" style="background: linear-gradient(135deg, #ea4335, #d14836);">
+                <i class="fas fa-envelope"></i> Send Payment Email
             </button>
         </div>
 
@@ -503,12 +565,17 @@
                 </div>
             </div>
             
-            <div class="contact-item">
+            <div class="contact-item" onclick="window.location.href='tel:8764069398'">
                 <i class="fas fa-phone"></i>
                 <span>87640 69398</span>
             </div>
             
-            <div class="contact-item">
+            <div class="contact-item" onclick="window.location.href='mailto:armanbangles9@gmail.com'">
+                <i class="fas fa-envelope"></i>
+                <span>armanbangles9@gmail.com</span>
+            </div>
+            
+            <div class="contact-item" onclick="window.open('https://instagram.com/arman_bangles_store', '_blank')">
                 <i class="fab fa-instagram"></i>
                 <span>@arman_bangles_store</span>
             </div>
@@ -518,7 +585,6 @@
         <div class="mobile-footer">
             <h3>Arman Bangles</h3>
             <p>Handmade Traditional Bangles Since 2005</p>
-            <div class="bangle-decoration"></div>
             <div class="social-links">
                 <a href="https://instagram.com/arman_bangles_store">
                     <i class="fab fa-instagram"></i>
@@ -529,9 +595,12 @@
                 <a href="tel:8764069398">
                     <i class="fas fa-phone"></i>
                 </a>
+                <a href="mailto:armanbangles9@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
             <div style="font-size: 12px; color: #ccc; margin-top: 15px;">
-                &copy; 2023 Arman Bangles | Phone: 87640 69398 | UPI: 8764069398@fam
+                &copy; 2023 Arman Bangles | Phone: 87640 69398 | UPI: 8764069398@fam | Email: armanbangles9@gmail.com
             </div>
         </div>
     </div>
@@ -545,7 +614,7 @@
             <div style="display: flex; gap: 10px;">
                 <button class="btn" onclick="closeCart()" style="flex: 1;">Continue Shopping</button>
                 <button class="btn" onclick="openCheckout()" style="flex: 1; background: linear-gradient(135deg, #4CAF50, #45a049);">
-                    Checkout
+                    Proceed to Checkout
                 </button>
             </div>
             <button class="btn" onclick="clearCart()" style="width: 100%; margin-top: 10px; background: linear-gradient(135deg, #ff6b6b, #ff4444);">
@@ -554,9 +623,72 @@
         </div>
     </div>
 
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <h2 style="text-align: center; margin-bottom: 20px;">📋 Billing & Shipping Details</h2>
+            
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">Order Summary</h3>
+                <div id="checkoutItems"></div>
+                <div style="border-top: 1px solid #ddd; margin-top: 10px; padding-top: 10px; font-weight: bold;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Total Amount:</span>
+                        <span id="checkoutTotal">₹0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="billingForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name *</label>
+                    <input type="text" id="customerName" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">WhatsApp Number *</label>
+                    <input type="tel" id="customerPhone" placeholder="10-digit mobile number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerAddress">Complete Address *</label>
+                    <textarea id="customerAddress" rows="3" placeholder="House No., Street, Area, Landmark" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerCity">City *</label>
+                    <input type="text" id="customerCity" placeholder="Your city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerState">State *</label>
+                    <input type="text" id="customerState" placeholder="Your state" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPincode">Pincode *</label>
+                    <input type="text" id="customerPincode" placeholder="6-digit pincode" required maxlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerMessage">Special Instructions (Optional)</label>
+                    <textarea id="customerMessage" rows="2" placeholder="Any special requests or notes"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" class="btn" onclick="closeCheckout()" style="flex: 1; background: #666;">Back to Cart</button>
+                    <button type="button" class="btn" onclick="sendOrderToWhatsApp()" style="flex: 1; background: linear-gradient(135deg, #4CAF50, #45a049);">
+                        <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         let cart = [];
         
+        // Cart Functions
         function addToCart(name, price) {
             cart.push({ name, price });
             updateCart();
@@ -572,18 +704,22 @@
             cartItems.innerHTML = '';
             let total = 0;
             
-            cart.forEach((item, index) => {
-                total += item.price;
-                cartItems.innerHTML += `
-                    <div class="cart-item">
-                        <div>
-                            <strong>${item.name}</strong>
-                            <div>₹${item.price}</div>
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: #666;">Your cart is empty</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    cartItems.innerHTML += `
+                        <div class="cart-item">
+                            <div>
+                                <strong>${item.name}</strong>
+                                <div>₹${item.price}</div>
+                            </div>
+                            <button onclick="removeFromCart(${index})" style="background: #ff4444; color: white; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">×</button>
                         </div>
-                        <button onclick="removeFromCart(${index})" style="background: #ff4444; color: white; border: none; border-radius: 5px; padding: 5px 10px;">×</button>
-                    </div>
-                `;
-            });
+                    `;
+                });
+            }
             
             cartTotal.textContent = `Total: ₹${total}`;
         }
@@ -591,11 +727,14 @@
         function removeFromCart(index) {
             cart.splice(index, 1);
             updateCart();
+            showNotification('Item removed from cart');
         }
         
         function clearCart() {
             cart = [];
             updateCart();
+            closeCart();
+            showNotification('Cart cleared');
         }
         
         function openCart() {
@@ -611,33 +750,166 @@
                 showNotification('Your cart is empty!');
                 return;
             }
-            // Redirect to checkout page or open checkout modal
-            window.location.href = '#checkout';
-            showNotification('Proceed to checkout for complete order process');
+            
+            // Update checkout summary
+            const checkoutItems = document.getElementById('checkoutItems');
+            const checkoutTotal = document.getElementById('checkoutTotal');
+            let total = 0;
+            
+            checkoutItems.innerHTML = '';
+            cart.forEach(item => {
+                total += item.price;
+                checkoutItems.innerHTML += `
+                    <div style="display: flex; justify-content: space-between; margin: 5px 0;">
+                        <span>${item.name}</span>
+                        <span>₹${item.price}</span>
+                    </div>
+                `;
+            });
+            
+            checkoutTotal.textContent = `₹${total}`;
+            
+            document.getElementById('checkoutModal').style.display = 'block';
+            closeCart();
+        }
+        
+        function closeCheckout() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+        
+        function sendOrderToWhatsApp() {
+            // Validate form
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const address = document.getElementById('customerAddress').value.trim();
+            const city = document.getElementById('customerCity').value.trim();
+            const state = document.getElementById('customerState').value.trim();
+            const pincode = document.getElementById('customerPincode').value.trim();
+            const message = document.getElementById('customerMessage').value.trim();
+            
+            if (!name || !phone || !address || !city || !state || !pincode) {
+                showNotification('Please fill all required fields!');
+                return;
+            }
+            
+            if (phone.length !== 10 || isNaN(phone)) {
+                showNotification('Please enter a valid 10-digit phone number!');
+                return;
+            }
+            
+            if (pincode.length !== 6 || isNaN(pincode)) {
+                showNotification('Please enter a valid 6-digit pincode!');
+                return;
+            }
+            
+            // Calculate total
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            
+            // Generate order details
+            const orderId = 'AB' + Date.now().toString().slice(-6);
+            const orderDate = new Date().toLocaleString('en-IN');
+            
+            // Create WhatsApp message
+            const itemsText = cart.map(item => `• ${item.name} - ₹${item.price}`).join('%0A');
+            const shippingAddress = `${address}, ${city}, ${state} - ${pincode}`;
+            
+            const whatsappMessage = 
+                `🛍️ *NEW ORDER - ${orderId}* 🛍️%0A%0A` +
+                `📋 *Customer Details:*%0A` +
+                `👤 Name: ${name}%0A` +
+                `📞 Phone: ${phone}%0A` +
+                `📍 Shipping Address:%0A${shippingAddress}%0A` +
+                `🕒 Order Time: ${orderDate}%0A%0A` +
+                `📦 *Order Items:*%0A${itemsText}%0A%0A` +
+                `💰 *Total Amount: ₹${total}*%0A%0A` +
+                `💬 *Customer Message:*%0A${message || 'No special instructions'}%0A%0A` +
+                `💳 *Payment Instructions:*%0A` +
+                `Please pay ₹${total} to:%0A` +
+                `*8764069398@fam*%0A%0A` +
+                `📧 *Email Payment Confirmation to:*%0A` +
+                `armanbangles9@gmail.com%0A%0A` +
+                `📱 *Contact for queries:* 87640 69398%0A` +
+                `🏪 *Arman Bangles*%0A` +
+                `Near BSNL Office, Baya, Danta Ramgarh, Sikar`;
+            
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/918764069398?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            showNotification('Order sent to WhatsApp! Please complete the payment.');
+            
+            // Clear cart and close modals
+            cart = [];
+            updateCart();
+            closeCheckout();
+            
+            // Reset form
+            document.getElementById('billingForm').reset();
         }
         
         function copyUPI() {
             const upiId = '8764069398@fam';
             navigator.clipboard.writeText(upiId).then(() => {
-                showNotification('UPI ID copied to clipboard: ' + upiId);
+                showNotification('UPI ID copied to clipboard!');
             });
         }
         
-        function showNotification(message) {
-            alert(message); // Simple notification for demo
+        function sendEmail() {
+            const subject = 'Payment Confirmation - Arman Bangles';
+            const body = `Dear Arman Bangles,%0A%0A` +
+                        `I have made the payment for my order.%0A%0A` +
+                        `My Details:%0A` +
+                        `- Name: [Your Name]%0A` +
+                        `- Phone: [Your Phone Number]%0A` +
+                        `- Order Details: [Brief description of products]%0A` +
+                        `- Amount Paid: ₹[Amount]%0A` +
+                        `- Transaction ID/Screenshot: [Attach screenshot]%0A%0A` +
+                        `Please confirm receipt of payment and process my order.%0A%0A` +
+                        `Thank you!`;
+            
+            window.location.href = `mailto:armanbangles9@gmail.com?subject=${subject}&body=${body}`;
         }
         
-        // Make phone clickable
-        document.querySelectorAll('.contact-item')[1].addEventListener('click', function() {
-            window.location.href = 'tel:8764069398';
+        function showNotification(message) {
+            // Remove existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Create new notification
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Make contact items clickable
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.style.cursor = 'pointer';
         });
         
-        // Close cart when clicking outside
+        // Close modals when clicking outside
         document.getElementById('cartModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeCart();
             }
         });
+        
+        document.getElementById('checkoutModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCheckout();
+            }
+        });
+        
+        // Initialize cart
+        updateCart();
     </script>
 </body>
-    </html>
+</html>
